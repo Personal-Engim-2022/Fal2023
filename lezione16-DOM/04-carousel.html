@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Carousel</h1>
+    
+    <div class="contImg">
+        <img id="miaImg" class="dimImg" src="">
+    </div>
+
+    <button id="btnRuota" >Ruota</button>
+
+    <hr>
+    <button id="btnInd">Indietro</button>
+    <button id="btnAvant">Avanti</button>
+
+    <hr>
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+
+    <script>
+        var listaImg = [
+            "https://images.placesonline.com/photos/torino_guida__1604937504.jpg?quality=80&w=696&h=403&mode=crop",
+            "https://tourismmedia.italia.it/is/image/mitur/1600X1000_itinerario_diecimila_passi_napoli_hero?qlt=82&ts=1665991935953&dpr=off",
+            "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/20000/20273-Roman-Forum.jpg",
+            "https://www.filoteapasta.com/wp-content/uploads/2019/07/Cattedrale-Palermo.jpg",
+            "https://www.travel365.it/foto/seagull-flies-by-rialto-bridge-popular-landmark-venice-italy.jpg"
+        ];
+
+        var miaImg = document.querySelector("#miaImg");
+        var btnRuota = document.querySelector("#btnRuota");
+        var contatore = 0;
+
+        function ruotaImg(){
+            // contatore = (contatore+1) % listaImg.length;
+            console.log(contatore);
+            if(contatore == listaImg.length - 1){
+                contatore = 0;
+            }else{
+                contatore++;
+            }
+            miaImg.setAttribute("src", listaImg[contatore]);
+        }
+
+        btnRuota.onclick = ruotaImg;
+
+        //questo richiamo serve a caricare la prima immagine
+        miaImg.setAttribute("src", listaImg[contatore]);
+
+        //prendo di pulsanti
+        //creo le funzioni avanti e indietro
+        //collego i pulsanti alle funzioni 
+
+        var btnInd = document.querySelector('#btnInd');
+        var btnAvant = document.querySelector("#btnAvant");
+
+        function vaiAvanti(){
+            ruotaImg();
+            // miaImg.setAttribute("src", listaImg[contatore]);
+            // if(contatore == listaImg.length - 1){
+            //     contatore = 0
+            // }else{
+            //     contatore++;
+            // }
+        }
+
+        function vaiIndietro(){
+            if(contatore == 0){
+                contatore = listaImg.length - 1    
+            }else{
+                contatore--;
+            }
+            miaImg.setAttribute("src", listaImg[contatore]);
+        }
+
+        btnInd.onclick = vaiIndietro;
+        btnAvant.onclick = vaiAvanti;
+
+
+        var btnStart = document.querySelector("#btnStart");
+        var btnStop = document.querySelector("#btnStop");
+
+        var intervalID;
+        
+        btnStart.onclick = function(){
+            intervalID = setInterval( () => {
+                ruotaImg(); 
+                btnStart.setAttribute("disabled" , true);
+            }, 2000);
+        }
+
+        btnStop.onclick = function(){
+           clearInterval(intervalID);
+           btnStart.removeAttribute("disabled");
+        }
+
+            
+
+    </script>
+
+</body>
+</html>

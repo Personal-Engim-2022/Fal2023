@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 id="titolo">Manipolazione del DOM</h1>
+
+    <ul id="lista">
+        <li class="txtBlue">Pasta</li>
+        <li class="txtBlue">Pane</li>
+        <li class="txtBlue">Olio</li>
+        <li class="txtBlue">Vino</li>
+        <li class="txtBlue">Prosciutto</li>
+        <li class="txtBlue">Biscotti</li>
+    </ul>
+
+    <p id="demo" class="txtOrange sottolineato grassetto">
+        Testo d'esempio
+    </p>
+
+    <script>
+        //Recupero l'elemento con id titolo utilizzando il QUery Selector
+        //Nel querySelector si utilizza la sintassi css
+        var titolo = document.querySelector("#titolo");
+        console.log(titolo);
+        titolo.innerHTML = "Lista della spesa";
+
+        //assegno la classe txtBlue a titolo
+        titolo.setAttribute("class", "txtBlue");
+
+        //Recupero tutto lo UL 
+        var lista = document.querySelector("#lista");
+        console.log(lista);
+
+        //REcupero tutti gli LI nella pagina
+        //gli li hanno class="txtBlue" ma anche il titolo ha class="txtBlue"
+        //Quando recupero più elementi sto recuperando una Nodelist, parente stretto degli array
+        var allLi = document.querySelectorAll("li.txtBlue");
+        console.log(allLi);
+
+        for(var i = 0; i < allLi.length; i++){
+            allLi[i].classList.add("sottolineato");
+        }
+    
+        var demo = document.querySelector("#demo");
+
+        //alcuni metodi della prop classList
+        demo.classList.add("barrato");
+        demo.classList.remove("txtOrange");
+        demo.classList.remove("grassetto");
+        demo.classList.add("txtRed");
+
+
+
+    </script>
+</body>
+</html>

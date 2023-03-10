@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Todo List</h1>
+    <input type="text" id="todo" >
+    <button id="btn">Aggiungi</button>
+
+    <ul id="lista"></ul>
+
+    
+    <script>
+        var lista = document.querySelector("#lista");
+        var btn = document.querySelector("#btn");
+        var todo = document.querySelector("#todo");
+
+
+        function aggiungi(){
+        //prendo quello che scrivo nell'input
+        //creo un li da inserire nella lista
+            let todoText = todo.value;
+            
+            let LI = document.createElement("li");
+            LI.textContent = todoText;
+
+            let btnElimina = document.createElement("button");
+            btnElimina.textContent = "X";
+
+            LI.appendChild(btnElimina);
+
+            lista.appendChild(LI);
+
+            LI.onclick = function(){
+                // this.setAttribute("class", "barrato");
+                // this.classList.add("barrato");
+                LI.classList.toggle("barrato");
+            }
+
+            btnElimina.onclick = function(){
+                lista.removeChild(LI);
+            }
+
+        }
+
+
+        btn.onclick = aggiungi;
+
+        //aggiunta con il tasto invio 
+        todo.onkeyup = function(){
+            console.log(event.keyCode);
+
+            if(event.keyCode == 13){
+                aggiungi();
+            }
+
+            // if(event.key == "Enter"){
+            //     aggiungi();
+            // }
+        }
+
+
+    </script>
+
+</body>
+</html>

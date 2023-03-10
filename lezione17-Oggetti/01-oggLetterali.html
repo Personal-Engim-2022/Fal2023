@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Oggetti</h1>
+    <p>Informazioni sulla persona</p>
+    <p id="nome"></p>
+    <p id="cognome"></p>
+    <p id="eta"></p>
+    <p id="presenza"></p>
+
+    <hr>
+
+    <p>Clicca sulle voci per sapere cosa c'è scritto</p>
+    <p id="voce"></p>
+
+
+    <script>
+        // var persona = ["Pippo", "Rossi", 30, true];
+        //Definisco l'oggetto persona
+        var persona = {
+            //proprietà
+            nome: "Pippo",
+            cognome: "Rossi",
+            eta: 30,
+            presenza: true,
+            
+            //metodi
+            studia: function(){
+                console.log("Sto studiando");
+            },
+
+            saluta: function(){
+                var saluto = "Ciao da " + this.nome;
+                return saluto;
+            }
+        }
+
+        //richiamo una o più prop
+        console.log("Il nome della persona è " + persona.nome);
+        persona.studia();
+
+        //Elementi html
+        var nome = document.querySelector("#nome");
+        var cognome = document.querySelector("#cognome");
+        var eta = document.querySelector("#eta");
+        var presenza = document.querySelector("#presenza");
+
+        
+        //oggetto.proprietà
+        nome.innerHTML = "Nome: " + persona.nome;
+        cognome.innerHTML = "Cognome: " + persona.cognome;
+        eta.innerHTML = "Età: " + persona.eta;
+        presenza.innerHTML = "Presenza: " + persona.presenza;
+        
+        
+        //intercetto il metodo saluta 
+        console.log( persona.saluta() );
+        
+
+        //clicco e scrivo la voce
+    var voce = document.querySelector("#voce");
+    
+    presenza.onclick = function(){
+        //this fa riferimento a presenza
+        voce.innerHTML = this.textContent;
+    }
+    
+    var elementiHtml = document.querySelectorAll("p");
+    
+    for(var i = 0 ; i < elementiHtml.length; i++){
+        elementiHtml[i].onclick = function(){
+            voce.innerHTML = this.textContent;
+        }
+    }
+
+    </script>
+
+
+</body>
+</html>

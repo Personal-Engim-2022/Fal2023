@@ -1,0 +1,8 @@
+.card{
+    display: block;
+    width: 200px;
+    min-height: 50px;
+    height: auto;
+    border: 1px solid black;
+    float: left;
+}

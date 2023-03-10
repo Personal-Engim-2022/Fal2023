@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Come fare una torta</h1>
+    <input type="button" value="Mostra Lista" onclick="mostraIngredienti()">
+
+    <div id="listaIngredienti"></div>
+
+    <hr>
+    <input type="button" value="Prepara torta" onclick="impastaEInforna()">
+
+    <div id="forno"></div>
+
+    <script>
+        var ing1 = "Latte";
+        var ing2 = "Farina";
+        var ing3 = "Uova";
+        var ing4 = "Zucchero";
+        var ing5 = "Yogurt";
+        var ing6 = "Lievito";
+
+        var listaIngredienti = document.getElementById("listaIngredienti");
+        var forno = document.getElementById("forno");
+
+        function mostraIngredienti(){
+            listaIngredienti.innerHTML = "<li>" + ing1 + "</li>";
+            listaIngredienti.innerHTML += "<li>" + ing2 + "</li>";
+            listaIngredienti.innerHTML += "<li>" + ing3 + "</li>";
+            listaIngredienti.innerHTML += "<li>" + ing4 + "</li>";
+            listaIngredienti.innerHTML += "<li>" + ing5 + "</li>";
+            listaIngredienti.innerHTML += "<li>" + ing6 + "</li>";
+        }
+  
+        function impastaEInforna(){
+            forno.innerHTML = "<p>Ho impastato gli ingredienti... </p>";
+            forno.innerHTML += "<p>Sto cuocendo...</p>";
+            
+            setTimeout(function(){
+                forno.innerHTML = "La torta è PRONTA";
+            }, 5000);
+        }
+        
+        
+    </script>
+</body>
+</html>

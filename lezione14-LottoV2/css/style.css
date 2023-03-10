@@ -1,0 +1,16 @@
+.cerchio{
+    border: 1px solid black;
+    border-radius: 50%;
+    float: left;
+    padding: 10px;
+    margin: 4px;
+    background-color: orangered;
+    font-weight: bold;
+}
+
+.serie{
+    display: block;
+    border: 2px solid red;
+    padding: 50px;
+    margin-top: 40px;
+}

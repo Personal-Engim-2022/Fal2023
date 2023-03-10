@@ -1,0 +1,60 @@
+.txtBlue{
+    color: blue;
+}
+
+.txtRed{
+    color: red;
+}
+
+.txtOrange{
+    color: orange;
+}
+
+.sottolineato{
+    text-decoration: underline;
+}
+
+.grassetto{
+    font-weight: bolder;
+}
+
+.barrato{
+    text-decoration: line-through;
+}
+
+.contImg{
+    display: block;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.dimImg{
+    width: 100%;
+    height: 100%;
+}
+
+.dimDiv{
+  width: 600px;
+  min-height: 60px;
+  height: auto;
+  margin: 20px;
+  border: 1px solid black;
+  padding: 10px 10px; 
+  overflow:auto;
+}
+
+.dimQuad{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid green;
+    margin: 5px;
+    float: left;
+}
+
+.bgVerde{
+    background-color: green;
+}
+

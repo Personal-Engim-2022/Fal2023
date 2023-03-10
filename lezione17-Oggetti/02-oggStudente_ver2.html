@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Studente</h1>
+
+    <p>Lo studente deve avere un nome, un cognome, una matricola, un corso, delle materie associate e un metodo presentati</p>
+
+    <button id="btn"> Presenta Studente </button>
+
+    <div id="presentazione"></div>
+
+    <script>
+    
+    var studente = {
+        nome: "Anna",
+        cognome: "Bianchi",
+        matricola: 1,
+        corso: {
+            nomeCorso: "Fal-Programmatore",
+            materie: ["JS", "PHP", "HTML e CSS"]
+        },
+
+        presentati: function(){
+
+            var listaMaterie = "";
+
+            for(var i = 0; i < this.corso.materie.length; i++){
+                listaMaterie += "<li>" + this.corso.materie[i] + "</li>";
+            }
+
+             var stringaPres = "Ciao, mi chiamo: " + this.nome +  " " + this.cognome + ". Matr: " + this.matricola + " <br> Frequento il corso di: " + this.corso.nomeCorso + "<ul>" + listaMaterie + "</ul>"  ;
+            
+            return stringaPres;
+        }
+    }
+
+   
+    var presentazione = document.querySelector("#presentazione");
+    var btn = document.querySelector("#btn");
+
+    function creaCard(){
+        var div = document.createElement("div");
+        div.innerHTML = studente.presentati(); 
+        div.setAttribute("class", "card");
+        presentazione.appendChild(div);
+    }
+
+    btn.onclick = creaCard;
+    
+    </script>
+</body>
+</html>

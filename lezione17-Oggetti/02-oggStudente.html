@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <h1>Studente</h1>
+
+    <p>Lo studente deve avere un nome, un cognome, una matricola, un corso, delle materie associate e un metodo presentati</p>
+
+    <div id="presentazione"></div>
+
+    <script>
+    
+    var studente = {
+        nome: "Anna",
+        cognome: "Bianchi",
+        matricola: 1,
+        corso: {
+            nomeCorso: "Fal-Programmatore",
+            materie: ["JS", "PHP", "HTML e CSS"]
+        },
+
+        presentati: function(){
+
+            var listaMaterie = "";
+
+            for(var i = 0; i < this.corso.materie.length; i++){
+                listaMaterie += "<li>" + this.corso.materie[i] + "</li>";
+            }
+
+         var stringaPres = "Ciao, mi chiamo: " + this.nome +  " " + this.cognome + ". Matr: " + this.matricola + " <br> Frequento il corso di: " + this.corso.nomeCorso + "<ul>" + listaMaterie + "</ul>"  ;
+            
+            return stringaPres;
+        }
+    }
+
+
+    console.log(studente);
+    //voglio sapere che corso frequenta lo studente
+    console.log(studente.corso.nomeCorso);
+
+    var presentazione = document.querySelector("#presentazione");
+    presentazione.innerHTML = studente.presentati();
+    
+    </script>
+</body>
+</html>

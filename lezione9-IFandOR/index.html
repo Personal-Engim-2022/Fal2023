@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Biglietti Cinema</h1>
+    <p>Se hai meno di 18 anni oppure più di 65 il tuo biglietto è scontato. <br>
+    Se hai meno i 5 anni il biglietto è gratis. <br>
+    Se hai la tessara socio e più di 18 anni hai un ulteriore sconto.</p>
+
+    <input type="number" min=0 max=120 id="eta" placeholder="Inserisci la tua età"><br>
+
+    <select id="tesseraSocio">
+        <option value="false" selected >Nessuna tessera</option>
+        <option value="true">Tessera Socio+</option>
+    </select>
+
+    <input type="button" value="Biglietto" onclick="generaBiglietto()">
+
+    <div id="demo"></div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

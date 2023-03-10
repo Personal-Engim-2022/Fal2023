@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Crea Elementi</h1>
+
+    <div id="divGrande" class="dimDiv">
+    </div>
+
+    <button id="btn">Crea quadrato</button>
+
+
+    <script>
+        //al click sul pulsante viene creato un div più piccolo e inserito in quello grande sopra
+
+        var btn = document.querySelector("#btn");
+        var divGrande = document.querySelector("#divGrande");
+
+        function creaQuad(){
+            // var quadrato = "<div class='dimQuad'>Ciao</div>";
+            // divGrande.innerHTML = quadrato;
+
+            //per costruire il quadrato creo un elemento DIV
+            var quadrato = document.createElement("div"); //<div></div>
+            quadrato.setAttribute("class", "dimQuad"); //<div class="dimQuad"></div>
+            quadrato.textContent = "Ciao";
+
+            quadrato.onclick = function(){
+                // quadrato.classList.add("bgVerde");
+                quadrato.classList.toggle("bgVerde");
+                // var numeroACaso1 = Math.ceil(Math.random() * 255);
+                // var numeroACaso2 = Math.ceil(Math.random() * 255);
+                // var numeroACaso3 = Math.ceil(Math.random() * 255);
+                // var colore = "rgb("+numeroACaso1+","+numeroACaso2+","+numeroACaso3+")";
+                // quadrato.setAttribute("style", "background-color: " + colore);
+            }
+
+            divGrande.appendChild(quadrato);
+        }
+
+        btn.onclick = creaQuad;
+    </script>
+</body>
+</html>

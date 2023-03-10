@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1 id="titolo">Lezione sul DOM</h1>
+
+    <p id="parag1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore optio esse aliquid, quasi quam aspernatur, nesciunt molestiae velit nobis laborum odio? Recusandae, ex! Ipsam in exercitationem quas aspernatur culpa maiores voluptatum, deserunt, voluptas nihil vel cumque reiciendis? Quod, optio velit?</p>
+
+    <p id="parag2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione possimus maiores aut eos minima quaerat, vel est laborum molestiae sapiente ad, earum dicta placeat magni maxime suscipit sunt error voluptates?</p>
+
+    <p id="parag3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos ea nobis blanditiis amet natus aperiam ex, porro, impedit illum aut ullam deserunt necessitatibus atque dolor suscipit recusandae omnis voluptate maiores!</p>
+
+    <script>
+    //Dare un colore diverso ad ogni paragrafo
+    //Testo sottolineato a tutti i paragrafi
+    //Al titolo dare il colore rosso
+    //ATT: nessun degli elementi ha una classe, quindi bisognerà settare la classe
+
+    //Recupero i singoli p
+    var parag1 = document.querySelector("#parag1");
+    var parag2 = document.querySelector("#parag2");
+    var parag3 = document.querySelector("#parag3");
+    
+    parag1.setAttribute("class", "txtBlue");
+    parag2.setAttribute("class", "txtOrange");
+    parag3.setAttribute("class", "txtRed");
+
+    //Recupero tutti i p
+
+    var allP = document.querySelectorAll("p"); //nodelist
+    //per applicare la classe sottolineato a tutti ciclo gli elementi
+    for(var i = 0; i < allP.length; i++){
+        allP[i].classList.add("sottolineato");
+    }
+
+    
+    // //titolo in rosso
+    var titolo = document.querySelector("#titolo");
+    titolo.setAttribute("class", "txtRed");
+    
+    // document.querySelector("#titolo").setAttribute("class", "txtRed");
+
+
+    </script>
+</body>
+</html>
