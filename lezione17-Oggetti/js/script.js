@@ -2,13 +2,15 @@
 //Utili nel caso in cui vogliamo creare più oggetti dello stesso tipo
 //creo lo "stampo" dello studente
 
+
+
 function Studente(nome,cognome,matricola) {
   this.nome = nome;
   this.cognome = cognome;
   this.matricola = matricola;
 
   this.presentati = function() {
-      var stringaPresentazione = "";
+      var stringaPresentazione = "Ciao mi chiamo " + this.nome + " " + this.cognome + " matr: " + this.matricola;
       
       return stringaPresentazione
   }
@@ -33,9 +35,46 @@ var classeFal = [
 
 var elenco = document.querySelector("#elenco");
 
-for(var i = 0; i < classeFal.length; i++){
-    elenco.innerHTML += "<li>" + classeFal[i].nome + " " + classeFal[i].cognome + " " + classeFal[i].matricola + "</li>";
-}
+// for(var i = 0; i < classeFal.length; i++){
+//     elenco.innerHTML += "<li>" + classeFal[i].nome + " " + classeFal[i].cognome + " " + classeFal[i].matricola + "</li>";
+// }
+
+// for(var i = 0; i < classeFal.length; i++){
+//     elenco.innerHTML += "<li>" + classeFal[i].presentati() + "</li>";
+// }
+
+//FOREACH - da applica solo ed esclusivamente sugli array
+classeFal.forEach( (studente) => {
+    elenco.innerHTML += "<li>" + studente.presentati() + "</li>";
+})
 
 
+//Voglio rendere tutti gli li di colore blue
+
+var lis = document.querySelectorAll("li");
+
+//l'operatore spread ... trasforma, in questo caso gli lis in un array
+[...lis].forEach(singoloLi => {
+    singoloLi.setAttribute("class", "txtBlue");
+})
+
+// for(var i = 0 ; i < lis.length; i++){
+//     lis[i].setAttribute("class", "txtBlue");
+// }
 //implementare il metodo presentati e sfruttarlo nel ciclo for
+
+
+// var somma = function (a,b) {
+//     console.log(a+b);
+// }
+
+// somma(3,4);
+
+// var somma2 = (a,b) => { 
+//     console.log(a+b);
+// }
+
+// (function () {
+    
+// })
+
