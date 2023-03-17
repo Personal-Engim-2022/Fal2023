@@ -39,6 +39,18 @@ var mioArr = [
                 descrizione: "Angular 4+",
                 crediti: 10
             }
+        ],
+        zaino: [
+            {
+                nome: "Pc",
+                modello: "Hp",
+                tipo: "Laptop"
+            },
+            {
+                nome: "Smartphone",
+                modello: "Samsung",
+                tipo: "S8"
+            }
         ]
     },
     //secondo oggetto
@@ -62,3 +74,18 @@ console.log(mioArrJson);
  *  descrizione: ""
  * }]
  */
+
+var mioObj = {
+    nome: "Computer",
+    marca: "Dell"
+}
+
+var mioJSON = JSON.stringify(mioObj);
+
+console.log(mioJSON);
+var demo = document.querySelector("#demo");
+
+demo.innerHTML = mioObj.nome +  " " + mioObj.marca;
+
+var feed = document.querySelector("#feed");
+feed.innerHTML = mioJSON.nome
