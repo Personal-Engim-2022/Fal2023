@@ -1,0 +1,33 @@
+{
+  "materie": [
+    {
+      "id": 1,
+      "docente": "Pippo Rossi",
+      "orario": 100,
+      "insegnamento": "Matematica"
+    },
+    {
+      "id": 2,
+      "docente": "Anna Bianchi",
+      "orario": 60,
+      "insegnamento": "Informatica"
+    },
+    {
+      "docente": "Dario Mennillo",
+      "insegnamento": "JS",
+      "orario": "120",
+      "id": 4
+    },
+    {
+      "docente": "Paolo NEri",
+      "insegnamento": "Calcio",
+      "orario": "200",
+      "id": 5
+    }
+  ],
+  "referente": {
+    "nome": "Maria Verdi",
+    "ruolo": "ref",
+    "anno": 2023
+  }
+}

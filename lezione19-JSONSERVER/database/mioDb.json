@@ -1,0 +1,30 @@
+{
+  "studenti": [
+    "Clemente",
+    "Filippo",
+    "Luca",
+    "Paolo",
+    "Stefano",
+    "Cinzia",
+    "Cesare",
+    "Mahdi",
+    "Ayouba"
+  ],
+  "utente": {
+    "nome": "Dario",
+    "cognome": "Mennillo",
+    "materia": "Javascript"
+  },
+  "docenti": [
+    {
+      "id": 1,
+      "nome": "Dario",
+      "cognome": "Mennillo"
+    },
+    {
+      "nome": "Alfonso",
+      "cognome": "Longo",
+      "id": 2
+    }
+  ]
+}

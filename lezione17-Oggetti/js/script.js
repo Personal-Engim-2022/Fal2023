@@ -2,24 +2,22 @@
 //Utili nel caso in cui vogliamo creare più oggetti dello stesso tipo
 //creo lo "stampo" dello studente
 
-// class Studente{
-//     nome;
-//     cognome;
+class Studente{
+    nome;
+    cognome;
 
-//     constructor(nome, cognome, matricola){
-//         this.nome = nome;
-//         this.cognome = cognome;
-//         this.matricola = matricola;
-//     }
-
-//     getNome(){
-//         return this.nome;
-//     }
-
-//     setNome(nuovoNome){
-//         this.nome = nuovoNome;
-//     }
-// }
+    constructor(nome, cognome, matricola){
+        this.nome = nome;
+        this.cognome = cognome;
+        this.matricola = matricola;
+    }
+    getNome(){
+        return this.nome;
+    }
+    setNome(nuovoNome){
+        this.nome = nuovoNome;
+    }
+}
 
 // var mioStudente = new Studente("Dario", "Mennillo", 1);
 // var nomeStudente = mioStudente.getNome();
